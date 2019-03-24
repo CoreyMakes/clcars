@@ -6,7 +6,10 @@ from itertools import islice
 
 class CarSpider(scrapy.Spider):
   name = "cars"
-  start_urls = ["https://seattle.craigslist.org/search/cto?postedToday=1&search_distance=20&postal=98052&max_price=5000&auto_make_model=toyota&auto_title_status=1"]
+  start_urls = [
+      "https://seattle.craigslist.org/search/cto?postedToday=1&search_distance=20&postal=98052&max_price=5000&auto_make_model=toyota&auto_title_status=1",
+      "https://seattle.craigslist.org/search/cto?postedToday=1&search_distance=20&postal=98052&max_price=5000&auto_make_model=honda&auto_title_status=1"
+  ]
 
   def parse(self, response):
     item_links_xpath = "//a[@class='result-title hdrlnk']/@href"
